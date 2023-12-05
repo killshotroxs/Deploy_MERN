@@ -6,18 +6,19 @@ function App() {
   const [users, setUsers] = useState([])
   const [name, setName] = useState([])
   const [age, setAge] = useState([])
+  axios.defaults.withCredentials = "true";
 
 
 
    useEffect(()=>{
-    axios.get("http://localhost:3001/getUsers")
+    axios.get("deploy-mern-api-seven.vercel.app/getUsers")
     .then((users)=>{
      setUsers(users.data)
     }).catch(err => console.log(err))
    }, [])
 
    const Submit = () => {
-    axios.post("http://localhost:3001/createUser", {name,age})
+    axios.post("deploy-mern-api-seven.vercel.app/createUser", {name,age})
     .then((users)=>{
      console.log(users)
     }).catch(err => console.log(err))
