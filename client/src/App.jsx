@@ -11,14 +11,14 @@ function App() {
 
 
    useEffect(()=>{
-    axios.get("deploy-mern-api-seven.vercel.app/getUsers")
+    axios.get("https://deploy-mern-api-seven.vercel.app/getUsers")
     .then((users)=>{
      setUsers(users.data)
     }).catch(err => console.log(err))
    }, [])
 
    const Submit = () => {
-    axios.post("deploy-mern-api-seven.vercel.app/createUser", {name,age})
+    axios.post("https://deploy-mern-api-seven.vercel.app/createUser", {name,age})
     .then((users)=>{
      console.log(users)
     }).catch(err => console.log(err))
