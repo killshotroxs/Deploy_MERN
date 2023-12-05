@@ -17,6 +17,10 @@ mongoose.connect(
   "mongodb+srv://cwy:test12345@cluster0.g6cbab9.mongodb.net/mern?retryWrites=true&w=majority"
 );
 
+app.get("/",(req,res) => {
+  res.json("Hello");
+})
+
 app.get("/getUsers", (req, res) => {
     UserModel.find({}).then(function(users){
         res.json(users)
@@ -24,6 +28,7 @@ app.get("/getUsers", (req, res) => {
         res.json(err)
     })
 })
+
 
 app.post("/createUser", async (req,res) => {
     const user = req.body;
