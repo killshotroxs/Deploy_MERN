@@ -24,11 +24,13 @@ app.get("/",(req,res) => {
 })
 
 app.get("/getUsers", (req, res) => {
-    UserModel.find({}).then(function(users){
-        res.json(users)
-    }).catch(function(err){
-        res.json(err)
-    })
+  res.json("Hello");
+
+    // UserModel.find({}).then(function(users){
+    //     res.json(users)
+    // }).catch(function(err){
+    //     res.json(err)
+    // })
 })
 
 
